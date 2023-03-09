@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type d -type f -exec chown vincent:staff +
