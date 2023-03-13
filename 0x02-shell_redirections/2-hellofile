@@ -1,2 +1,2 @@
 #!/bin/bash
-cat /erc/passwd
+cat /etc/passwd
