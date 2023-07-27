@@ -4,7 +4,7 @@
 count1=1
 count2=1
 
-while [ $count1 -le 12 ]
+while [ $count1 -le 13 ]
 do
 	while [ $count2 -le 59 ]
 	do
@@ -12,7 +12,10 @@ do
 		count2=$((count2+1))
 	done
 	
-	echo "Hour: $count1"
+	if [ $count1 != 13 ]
+	then
+		echo "Hour: $count1"
+	fi
     	count1=$((count1+1))
 	count2=1
 done
