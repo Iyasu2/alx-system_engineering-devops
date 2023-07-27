@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#this script uses while loop to print Best school 10 times but do smt different on the 9th
+
+count1=1
+count2=1
+
+while [ $count1 -le 12 ]
+do
+	while [ $count2 -le 59 ]
+	do
+		echo "$count2"
+		count2=$((count2+1))
+	done
+	
+	echo "Hour: $count1"
+    	count1=$((count1+1))
+	count2=1
+done
