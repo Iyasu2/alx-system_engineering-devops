@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#this script lists files in the current directory
+
+for file in *
+do
+	if [ -f "$file" ] && [ "${file:0:1}" != "." ]
+    	then
+        	name=$(echo "$file" | cut -d'-' -f2-)
+        echo "$name"
+    	fi
+done
