@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#this script does something
+
+pid=$(pgrep 4-to_infinity_and_beyond)
+
+if [ -z "$pid" ]; then
+    	echo "The 4-to_infinity_and_beyond process is not running."
+else
+    	kill -s SIGTERM "$pid"
+       	while [ -e /proc/"$pid" ]; do sleep 0.1; done
+	echo "The 4-to_infinity_and_beyond process has been stopped."
+fi
