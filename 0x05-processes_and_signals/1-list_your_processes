@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #this script displays its own processes
 
-ps -ef
+ps -e -o "user pid %cpu %mem vsz rss tty stat start time command"
