@@ -1,14 +1,4 @@
 #!/usr/bin/env bash
 #this script does something
 
-pid=$(pgrep 7-highlander)
-
-if [ -z "$pid" ]; then
-    	echo "The 7-highlander process is not running."
-else
-    	if kill "$pid"; then
-        	echo "The 7-highlander process has been stopped."
-    	else
-        	echo "Failed to stop the 7-highlander process."
-    	fi
-fi
+pkill -f -SIGKILL 7-highlander
