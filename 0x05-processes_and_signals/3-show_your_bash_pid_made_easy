@@ -1,0 +1,9 @@
+#!/bin/bash
+#this script does something
+
+for pid in /proc/[0-9]*
+do
+    	if grep -q "bash" "$pid/cmdline"; then
+        	echo "$(basename "$pid") $(cat "$pid/cmdline" | tr '\0' ' ')"
+    	fi
+done
