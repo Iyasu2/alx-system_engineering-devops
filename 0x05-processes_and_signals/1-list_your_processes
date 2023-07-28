@@ -2,3 +2,4 @@
 #this script displays its own processes
 
 ps -e -o "user pid %cpu %mem vsz rss tty stat start time command"
+
