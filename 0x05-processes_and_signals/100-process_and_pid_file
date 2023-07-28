@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Define the function to run on SIGTERM or SIGQUIT
+
+function sigterm_handler {
+    	echo "Deleting PID file and terminating..."
+    	rm /var/run/myscript.pid
+    	exit 0
+}
+
+# Define the function to run on SIGINT
+function sigint_handler {
+    	echo "Y U no love me?!"
+}
+
+# Define the function to run on SIGTERM
+function sigterm_handler {
+    	echo "I hate the kill command"
+}
+
+# Register the signal handlers
+trap 'sigterm_handler' SIGTERM SIGQUIT
+trap 'sigint_handler' SIGINT
+trap 'sigterm_handler' SIGTERM
+
+# Write the PID to a file
+echo "$$" > /var/run/myscript.pid
+
+# Loop indefinitely
+while true; do
+    	echo "To infinity and beyond indefinitely"
+    	sleep 2
+done
