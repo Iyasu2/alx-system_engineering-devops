@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
 #this script does something
 
-for pid in /proc/[0-9]*
-do
-    	if grep -q "bash" "$pid/cmdline" 2>/dev/null; then
-        	echo "$(basename "$pid") $(tr '\0' ' ' < "$pid/cmdline")"
-    	fi
-done
+pgrep -l bash
