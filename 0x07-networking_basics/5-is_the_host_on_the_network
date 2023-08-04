@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#pinging a network
 
 if [ -z "$1" ]
 then
