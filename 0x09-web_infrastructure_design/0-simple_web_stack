@@ -1,0 +1,20 @@
+https://drive.google.com/file/d/1JktBwMwURi-IhD_aLWhciIk86wh8X5dH/view?usp=sharing
+
+Server: A server is a powerful computer that is responsible for hosting and serving the website content. It handles requests from users and provides the necessary resources to fulfill those requests.
+
+Domain Name: The domain name (foobar.com) is a human-readable address that allows users to access the website. It acts as a unique identifier for the server hosting the website. In this case, the www record is a DNS record that specifies the subdomain (www) and maps it to the server's IP address (8.8.8.8).
+
+Web Server: The web server (such as Nginx) handles incoming HTTP requests from users and serves static files like HTML, CSS, and images. It receives the user's request for a webpage and returns the corresponding web content to be displayed in the user's browser.
+
+Application Server: The application server is responsible for executing the website's dynamic code and generating dynamic content. It runs the application codebase, processes user requests, and interacts with the database to retrieve or store data. It can handle more complex logic and dynamic functionality of the website.
+
+Database: The MySQL database stores and manages the website's data. It provides a structured storage system where data can be organized, retrieved, and modified. The database is used by the application server to store and retrieve information such as user accounts, product details, and other data required by the website.
+
+Communication: The server communicates with the user's computer using the HTTP(S) protocol. When a user requests a webpage by entering www.foobar.com in their browser, the request travels over the internet to the server. The server processes the request and sends back the appropriate response, which includes the requested webpage content.
+
+Some of the issues that this infrastructure can cause are:
+SPOF (Single Point of Failure): Since this infrastructure consists of a single server, it becomes a single point of failure. If the server experiences hardware failure or any other issues, the entire website becomes inaccessible.
+
+Downtime during Maintenance: When maintenance tasks like deploying new code are required, the web server needs to be restarted. During this period, the website may experience downtime and become unavailable to users.
+
+Limited Scalability: With only one server, scaling to handle a large amount of incoming traffic becomes challenging. As the website gains popularity and traffic increases, the single server may become overloaded, leading to slow response times or even crashes.
