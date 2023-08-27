@@ -1,0 +1,20 @@
+https://drive.google.com/file/d/1TuIimhivYcHbnbzM7nTX8TpPzryVGcAc/view?usp=sharing
+
+Additional Servers: Two additional servers are added to the infrastructure to improve performance, increase fault tolerance, and enable scalability. Having multiple servers allows for load distribution and redundancy.
+
+Load Balancer (HAproxy): The load balancer evenly distributes incoming traffic across the web servers. It acts as a central point of entry for user requests and decides which web server should handle each request. The load balancer can use a distribution algorithm, such as round-robin, to determine the allocation of requests among the servers.
+
+Distribution Algorithm: The load balancer is configured with a distribution algorithm, such as round-robin, which cycles through the available servers in a circular order to evenly distribute incoming requests. This helps distribute the load across multiple servers, preventing a single server from becoming overwhelmed with traffic.
+
+Active-Active vs. Active-Passive: The load balancer enables an active-active setup, where both web servers actively handle user requests simultaneously. In an active-active setup, both servers are actively serving requests, which allows for better scalability and fault tolerance compared to an active-passive setup where one server remains idle until failover occurs.
+
+Database Primary-Replica Cluster: The MySQL database is configured as a primary-replica (master-slave) cluster. The primary node accepts write operations and replicates the data changes to the replica nodes. The replica nodes serve read requests and provide redundancy. This setup improves data availability, provides fault tolerance, and enables read scalability.
+
+Primary vs. Replica Node: The primary node in the database cluster handles write operations and maintains the authoritative copy of the data. The replica nodes replicate the data from the primary node and serve read requests. The application can read data from replica nodes, offloading some read traffic from the primary node and improving overall performance.
+
+Now for the potential issues
+SPOF: The load balancer, web servers, and database still pose a potential single point of failure (SPOF) individually. If any of these components fail, it may impact the availability of the website. To address this, further redundancy measures like additional load balancers, web servers, and database replicas can be added.
+
+Security Issues: The infrastructure as depicted does not include a firewall or HTTPS configuration. This exposes the system to security risks. Implementing a firewall can help protect against unauthorized access, while configuring HTTPS ensures secure communication between the user and the website.
+
+Monitoring: The infrastructure lacks a monitoring system to track the health and performance of servers, load balancers, and the database. Monitoring is crucial for identifying potential issues, performance bottlenecks, and ensuring the overall system stability. Implementing a monitoring solution can help detect and resolve problems promptly.
