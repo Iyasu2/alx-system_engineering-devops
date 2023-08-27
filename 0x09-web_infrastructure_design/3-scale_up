@@ -1,0 +1,15 @@
+https://drive.google.com/file/d/1uyvMkOdrTjnuxzzuO_gK9RZ6OGIGDcjf/view?usp=sharing
+
+Additional Server: An additional server is added to the infrastructure to ensure fault tolerance and high availability. By having multiple servers, the system can handle increased traffic and provide redundancy in case one server fails. This enhances the overall reliability and performance of the infrastructure.
+
+Load Balancer (HAproxy) Cluster: The load balancer is configured as a cluster with two instances to distribute incoming traffic across the web servers evenly. Load balancing helps optimize resource utilization, improves scalability, and provides high availability. The cluster ensures that if one load balancer fails, the other can continue to handle traffic, minimizing downtime.
+
+Split Components: In this design, each component (web server, application server, and database) is hosted on its own dedicated server. This separation allows for better resource allocation, scalability, and fault isolation. It enables independent scaling of each component based on its specific requirements and provides better security by isolating sensitive data on dedicated database servers.
+
+Adding these elements improves the infrastructure in the following ways:
+
+Additional Server: The additional server enhances performance and fault tolerance by sharing the load and providing redundancy. It increases capacity to handle more concurrent users and provides backup in case one server fails.
+
+Load Balancer: The load balancer evenly distributes incoming traffic across multiple web servers, improving responsiveness and handling more concurrent requests. It helps prevent overloading of individual servers and provides seamless failover in case of server failures.
+
+Split Components: Separating components onto dedicated servers allows for efficient resource allocation and scaling. It avoids resource contention among different components and provides better isolation for security and performance reasons.
