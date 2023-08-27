@@ -1,0 +1,15 @@
+https://drive.google.com/file/d/10V8wNe88Ve6XM9Gfwxl_DZCNxD5fbxh0/view?usp=sharing
+
+Additional Firewalls: Three firewalls are added to the infrastructure to enhance security. Firewalls act as a barrier between the internal network and external threats. They monitor and control incoming and outgoing network traffic based on predefined security rules, helping to protect the servers and the network from unauthorized access and malicious activities.
+
+SSL Certificate: An SSL certificate is added to enable HTTPS encryption for serving traffic over the www.foobar.com domain. HTTPS ensures secure communication between the user's browser and the web server, protecting sensitive information from interception or tampering. The SSL certificate provides encryption and authentication, establishing a secure connection.
+
+Monitoring Clients: Three monitoring clients are added to collect data and send it to a monitoring service such as Sumo Logic. Monitoring is used to track the health, performance, and availability of the infrastructure components. The monitoring clients collect and transmit relevant data, such as server metrics, logs, and events, to the monitoring service for analysis and alerting.
+
+Terminating SSL at the Load Balancer: Terminating SSL at the load balancer level can be an issue because it introduces a potential single point of failure. If the load balancer fails, the SSL termination process would be disrupted, leading to a loss of HTTPS connectivity. To address this, SSL termination can be implemented at the web servers themselves or by using a redundant load balancer setup.
+
+Single MySQL Server for Writes: Having only one MySQL server capable of accepting writes poses a single point of failure and scalability limitation. If the MySQL server fails, write operations would be affected, impacting the functionality of the website. To improve fault tolerance and scalability, a database cluster with multiple MySQL servers or the use of a master-slave replication setup can be employed.
+
+Servers with Same Components: Having servers with the same components, such as the database, web server, and application server, can lead to a lack of fault isolation and limited redundancy. If a specific component fails, all servers would be affected, potentially causing widespread downtime. Introducing diversity in the infrastructure by distributing components across different servers can increase fault tolerance and improve the overall resilience of the system.
+
+Monitoring Web Server QPS: To monitor the web server's QPS (Queries Per Second), you can configure the monitoring tool to collect relevant metrics such as the total number of requests received by the web server within a specific time frame. By tracking QPS, you can assess the server's performance, identify potential bottlenecks, and ensure that it can handle the expected traffic load.
