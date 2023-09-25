@@ -8,9 +8,9 @@ fi
 
 path_to_file="$1"
 ip="$2"
-username="$i"
+username="$3"
 path_to_ssh="$4"
 
 export SSH_OPTIONS="-o StrictHostKeyChecking=no"
 
-scp -i "$path_to_ssh" $SSH_OPTIONS "$path_to_file" "$username"@"$ip":~
+scp -i "$path_to_ssh" "$SSH_OPTIONS" "$path_to_file" "$username"@"$ip":~
