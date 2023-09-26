@@ -14,7 +14,7 @@ echo "server {
 	error_page 404 /404.html;
 	location = /404.html {
 		internal;
-		return 404 \"Ceci n'est pas une page\";
+		return 404 \"Ceci n'est pas une page\n\";
 	}
 }" | sudo tee /etc/nginx/sites-available/404-page.conf
 
