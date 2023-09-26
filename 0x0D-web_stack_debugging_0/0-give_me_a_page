@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# debug
+
+sudo apt-get update
+sudo apt-get install -y apache2
+
+echo "Hello Holberton" | sudo tee /var/www/html/index.html
+
+sudo ufw allow 80/tcp
+
+sudo service apache2.service start
