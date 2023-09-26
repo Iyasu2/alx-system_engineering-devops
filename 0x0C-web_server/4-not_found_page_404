@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#configure a redirect
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+sudo touch /etc/nginx/sites-available/404-page.conf
+sudo chmod 666 /etc/nginx/sites-available/404-page.conf
+
+echo "server {
+	listen 80 default_server;
+	listen [::]80 default_server;
+	server_name _;
+	root /var/www/html;
+
+	error_page 404 /404.html;
+	location = /404.html {
+		internal;
+		return 404 \"Ceci n'est pas une page\";
+	}
+}" | sudo tee /etc/nginx/sites-available/404-page.conf
+
+sudo ln -s /etc/nginx/sites-available/404-page.conf /etc/nginx/sites-enabled/
+
+sudo nginx -t
+sudo service nginx restart
