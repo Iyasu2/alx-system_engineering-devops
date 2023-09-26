@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#configure a redirect
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+sudo touch /etc/nginx/sites-available/redirect_me.conf
+sudo chmod 666 /etc/nginx/sites-available/redirect_me.conf
+
+echo "server {
+	listen 80;
+	server_name 100.24.74.170;
+	return 301 https://www.youtube.com/watch?v=dQw4w9WgXcQ;
+}" | sudo tee /etc/nginx/sites-available/redirect_me.conf
+
+sudo ln -s /etc/nginx/sites-available/redirect_me.conf /etc/nginx/sites-enabled/
+
+sudo nginx -t
+sudo service nginx restart
