@@ -1,6 +1,16 @@
 # edit the config file
+include stdlib
 
-file { '/home/iyasu2/.ssh/config':
+file_line { 'Turn off passwd auth':
   ensure  => present,
-  content => "Host 100.24.74.170\n  IdentityFile ~/.ssh/school\n  PasswordAuthentication no\n",
+  path    => '/etc/ssh/ssh_config',
+  line    => '    PasswordAuthentication no',
+  replace => true,
+}
+
+file_line { 'Delare identity file':
+  ensure  => present,
+  path    => '/etc/ssh/ssh_config',
+  line    => '     IdentityFile ~/.ssh/school',
+  replace => true,
 }

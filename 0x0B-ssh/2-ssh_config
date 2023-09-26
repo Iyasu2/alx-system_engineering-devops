@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# configure ssh client to not use password
-Host 100.24.74.170
-  IdentityFile ~/.ssh/school
-  PasswordAuthentication no
