@@ -8,13 +8,13 @@ sudo ufw allow "Nginx HTTP"
 sudo mkdir -p /var/www/html
 sudo touch /var/www/html/index.html
 sudo chmod 666 /var/www/html/index.html
-sudo echo "Hello World" > /var/www/html/index.html
+echo "Hello World" > /var/www/html/index.html
 sudo touch /var/www/html/404.html
 sudo chmod 666 /var/www/html/404.html
-sudo echo "Ceci n'est pas une page" > /var/www/html/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 sudo chmod 666 /etc/nginx/sites-available/default
-sudo printf %s "server {
+printf %s "server {
     listen 80 default_server;
     listen [::]:80 default_server;
     add_header X-Served-By $HOSTNAME;
