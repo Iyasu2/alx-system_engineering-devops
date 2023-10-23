@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #run nginx as nginx
-sudo service nginx stop
-sudo chown -R nginx:nginx /etc/nginx /var/log/nginx /var/lib/nginx /var/cache/nginx
-sudo sed -i 's/listen 80;/listen 8080;/g' /etc/nginx/nginx.conf
-sudo service nginx start
+pkill -f apache2
+chmod 644 /etc/nginx/nginx.conf
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
+sudo -u nginx service nginx restart
