@@ -17,7 +17,7 @@ if __name__ == "__main__":
     response = requests.get(employee_url)
 
     employee_data = response.json()
-    employee_name = employee_data.get('name')
+    employee_user_name = employee_data.get('username')
 
     response = requests.get(todos_url)
 
@@ -32,6 +32,6 @@ if __name__ == "__main__":
                     else "False"
             task_title = todo.get('title')
             writer.writerow([employee_id,
-                             employee_name,
+                             employee_user_name,
                              task_completed_status,
                              task_title])
