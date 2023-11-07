@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-'''
-this module imports
-the number of subscribers
-in a subreddit
-'''
+"""
+this module imports the number of subscribers in a subreddit
+"""
 import requests
 
 
@@ -11,7 +9,7 @@ def number_of_subscribers(subreddit):
     '''
     function to get no of subscribers
     '''
-    if subreddit is None or type(subreddit) is not str:
+    if subreddit is None or not isinstance(subreddit, str):
         return 0
     headers = {'User-Agent': '0x16-api_advanced:project:\
             v1.0.0 (by/u/Iyasu Asnake)'}
