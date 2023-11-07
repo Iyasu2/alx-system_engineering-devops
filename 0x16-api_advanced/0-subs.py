@@ -15,11 +15,13 @@ def number_of_subscribers(subreddit):
             v1.0.0 (by/u/Iyasu Asnake)'}
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
 
-    response = requests.get(url, headers=headers, allow_redirects=False)
-
     try:
+        response = requests.get(url, headers=headers, allow_redirects=False)
         data = response.json()
-        subscribers = data['data']['subscribers']
-        return subscribers
-    except Exception:
+        if response.status_code == 200:
+            subscribers = data['data']['subscribers']
+            return subscribers
+        else:
+            return 0
+    except Exception as e:
         return 0
